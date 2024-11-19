@@ -12,7 +12,7 @@ function EnrollmentCard({ enrollment, onDelete }) {
 
   return (
     <div className="bg-black p-5 rounded-2xl sm:w-[360px] w-full">
-      <Link href={`/courses/${id}/lessons`}>
+      <Link href={`/courses/${courseId}/lessons`}>
         <div className="relative w-full h-[230px]">
           <Image
             src={image}

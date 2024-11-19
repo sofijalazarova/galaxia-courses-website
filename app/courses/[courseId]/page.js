@@ -17,21 +17,46 @@ async function Page({ params }) {
   const course = await getCourse(params.courseId);
 
   return (
-    <div className="px-6 mt-10 bg-black border-2 sm:px-16 border-secondary">
-      <div className="flex items-center gap-8 px-16 py-10 mb-10">
-        <div className="relative w-full rounded-2xl h-[230px]">
+    // <div className="px-6 mt-10 bg-black border-2 sm:px-16 border-secondary">
+    //   <div className="flex items-center gap-8 px-16 py-10 mb-10">
+    //     <div className="relative w-full rounded-2xl h-[230px]">
+    //       <Image
+    //         src={course.image}
+    //         alt="course"
+    //         fill
+    //         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+    //         className="object-cover w-full h-full"
+    //       />
+    //     </div>
+    //     <div>
+    //       <h1 className={styles.sectionHeadText}>{course.name}</h1>
+    //       <p>{course.description}</p>
+    //       <span className="flex gap-1">
+    //         <MdAccessTimeFilled />
+    //         {course.duration} hours
+    //       </span>
+    //       <span className="flex gap-1">
+    //         <FaPhotoVideo />
+    //         Includes video materials
+    //       </span>
+    //     </div>
+    //   </div>
+
+    <div className="bg-black border-2 mt-14 sm:px-16 border-secondary">
+      <div className="flex items-center gap-8 py-10">
+        <div className="relative">
           <Image
             src={course.image}
             alt="course"
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="object-cover w-full h-full"
+            width={500}
+            height={500}
+            className="border rounded-xl"
           />
         </div>
-        <div>
+        <div className="w-1/2 ">
           <h1 className={styles.sectionHeadText}>{course.name}</h1>
-          <p>{course.description}</p>
-          <span className="flex gap-1">
+          <p className="font-medium text-secondary">{course.description}</p>
+          <span className="flex gap-1 pt-2">
             <MdAccessTimeFilled />
             {course.duration} hours
           </span>
@@ -41,7 +66,6 @@ async function Page({ params }) {
           </span>
         </div>
       </div>
-
       <Enrollment course={course} />
     </div>
   );

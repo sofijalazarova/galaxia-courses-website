@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
         <div className="relative z-0">
           <Navbar />
           {children}
-          {/* <StarsCanvas /> */}
+          <StarsCanvas />
         </div>
       </body>
     </html>

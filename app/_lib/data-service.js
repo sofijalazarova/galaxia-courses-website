@@ -1,4 +1,5 @@
 import { supabase } from "./supabase";
+import { notFound } from "next/navigation";
 
 export const getCourses = async function () {
   let { data, error } = await supabase
